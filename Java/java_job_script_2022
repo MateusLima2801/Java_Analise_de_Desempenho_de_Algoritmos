@@ -1,4 +1,4 @@
-#!/bin/csh -f
+#!/bin/bash -f
 
 #SBATCH --time=03:30:00
 #SBATCH --job-name=java
@@ -14,19 +14,19 @@ rm -f *.class
 start=$(date +%s%N)
 
 javac testCopyMatrix5000.java
-java -Xmx7g -Xms7G testCopyMatrix5000
-java -Xmx7g -Xms7G testCopyMatrix5000
-java -Xmx7g -Xms7G testCopyMatrix5000
+java -Xmx4g -Xms4G testCopyMatrix5000
+java -Xmx4g -Xms4G testCopyMatrix5000
+java -Xmx4g -Xms4G testCopyMatrix5000
 
 javac testCopyMatrix7000.java
-java -Xmx7g -Xms7G testCopyMatrix7000
-java -Xmx7g -Xms7G testCopyMatrix7000
-java -Xmx7g -Xms7G testCopyMatrix7000
+java -Xmx4g -Xms4G testCopyMatrix7000
+java -Xmx4g -Xms4G testCopyMatrix7000
+java -Xmx4g -Xms4G testCopyMatrix7000
 
 javac testCopyMatrix9000.java
-java -Xmx7g -Xms7G testCopyMatrix9000
-java -Xmx7g -Xms7G testCopyMatrix9000
-java -Xmx7g -Xms7G testCopyMatrix9000
+java -Xmx4g -Xms4G testCopyMatrix9000
+java -Xmx4g -Xms4G testCopyMatrix9000
+java -Xmx4g -Xms4G testCopyMatrix9000
 
 javac testLookAndSay40.java
 java testLookAndSay40

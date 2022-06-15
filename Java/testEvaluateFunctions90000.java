@@ -5,7 +5,7 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Random;
 
-class testEvaluateFunction90000 {
+class testEvaluateFunctions90000 {
 
     public static void main (String[] args) {
 
