@@ -1,0 +1,6 @@
+FROM ubuntu:latest
+
+WORKDIR /home/java_testes
+RUN apt-get update
+RUN apt-get install -y openjdk-18-jdk
+ADD AlgFinal .
