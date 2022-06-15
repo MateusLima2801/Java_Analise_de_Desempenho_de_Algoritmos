@@ -1,0 +1,191 @@
+#!/bin/bash -f
+
+#SBATCH --time=03:30:00
+#SBATCH --job-name=java
+#SBATCH --ntasks=80
+#SBATCH --constraint=sky
+#SBATCH -A j1008
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+#SBATCH -o Java2022-%j.out
+
+rm -f *.class
+
+start=$(date +%s%N)
+
+javac testCopyMatrix5000.java
+java -Xmx4g -Xms4G testCopyMatrix5000
+java -Xmx4g -Xms4G testCopyMatrix5000
+java -Xmx4g -Xms4G testCopyMatrix5000
+
+javac testCopyMatrix7000.java
+java -Xmx4g -Xms4G testCopyMatrix7000
+java -Xmx4g -Xms4G testCopyMatrix7000
+java -Xmx4g -Xms4G testCopyMatrix7000
+
+javac testCopyMatrix9000.java
+java -Xmx4g -Xms4G testCopyMatrix9000
+java -Xmx4g -Xms4G testCopyMatrix9000
+java -Xmx4g -Xms4G testCopyMatrix9000
+
+javac testLookAndSay40.java
+java testLookAndSay40
+java testLookAndSay40
+java testLookAndSay40
+
+javac testLookAndSay45.java
+java testLookAndSay45
+java testLookAndSay45
+java testLookAndSay45
+
+javac testLookAndSay48.java
+java testLookAndSay48
+java testLookAndSay48
+java testLookAndSay48
+
+javac testCountUniqueWordsBible.java
+java testCountUniqueWordsBible
+java testCountUniqueWordsBible
+java testCountUniqueWordsBible
+
+javac testCountUniqueWordsBook1.java
+java testCountUniqueWordsBook1
+java testCountUniqueWordsBook1
+java testCountUniqueWordsBook1
+
+javac testCountUniqueWordsPlrabn12.java
+java testCountUniqueWordsPlrabn12
+java testCountUniqueWordsPlrabn12
+java testCountUniqueWordsPlrabn12
+
+javac testCountUniqueWordsWorld192.java
+java testCountUniqueWordsWorld192
+java testCountUniqueWordsWorld192
+java testCountUniqueWordsWorld192
+
+javac testFibonacci25.java
+java testFibonacci25
+java testFibonacci25
+java testFibonacci25
+
+javac testFibonacci35.java
+java testFibonacci35
+java testFibonacci35
+java testFibonacci35
+
+javac testFibonacci45.java
+java testFibonacci45
+java testFibonacci45
+java testFibonacci45
+
+javac testMatrixMultiplication1500.java
+java testMatrixMultiplication1500
+java testMatrixMultiplication1500
+java testMatrixMultiplication1500
+
+javac testMatrixMultiplication1750.java
+java testMatrixMultiplication1750
+java testMatrixMultiplication1750
+java testMatrixMultiplication1750
+
+javac testMatrixMultiplication2000.java
+java testMatrixMultiplication2000
+java testMatrixMultiplication2000
+java testMatrixMultiplication2000
+
+javac testBeliefPropagation250.java
+java testBeliefPropagation250
+java testBeliefPropagation250
+java testBeliefPropagation250
+
+javac testBeliefPropagation500.java
+java testBeliefPropagation500
+java testBeliefPropagation500
+java testBeliefPropagation500
+
+javac testBeliefPropagation1000.java
+java testBeliefPropagation1000
+java testBeliefPropagation1000
+java testBeliefPropagation1000
+
+javac testMarkovChain5000.java
+java testMarkovChain5000
+java testMarkovChain5000
+java testMarkovChain5000
+
+javac testMarkovChain10000.java
+java testMarkovChain10000
+java testMarkovChain10000
+java testMarkovChain10000
+
+javac testMarkovChain15000.java
+java testMarkovChain15000
+java testMarkovChain15000
+java testMarkovChain15000
+
+javac testLaplaceJacobi4_100.java
+java testLaplaceJacobi4_100
+java testLaplaceJacobi4_100
+java testLaplaceJacobi4_100
+
+javac testLaplaceJacobi4_150.java
+java testLaplaceJacobi4_150
+java testLaplaceJacobi4_150
+java testLaplaceJacobi4_150
+
+javac testLaplaceJacobi4_200.java
+java testLaplaceJacobi4_200
+java testLaplaceJacobi4_200
+java testLaplaceJacobi4_200
+
+# this code works at most with the entry = 12
+# don't uncomment
+# javac testGaussLegendreQuadrature50.java
+# java testGaussLegendreQuadrature50
+# java testGaussLegendreQuadrature50
+# java testGaussLegendreQuadrature50
+
+# javac testGaussLegendreQuadrature75.java
+# java testGaussLegendreQuadrature75
+# java testGaussLegendreQuadrature75
+# java testGaussLegendreQuadrature75
+
+# javac testGaussLegendreQuadrature100.java
+# java testGaussLegendreQuadrature100
+# java testGaussLegendreQuadrature100
+# java testGaussLegendreQuadrature100
+
+javac testEvaluateFunctions80000.java
+java testEvaluateFunctions80000
+java testEvaluateFunctions80000
+java testEvaluateFunctions80000
+
+javac testEvaluateFunctions90000.java
+java testEvaluateFunctions90000
+java testEvaluateFunctions90000
+java testEvaluateFunctions90000
+
+javac testEvaluateFunctions100000.java
+java testEvaluateFunctions100000
+java testEvaluateFunctions100000
+java testEvaluateFunctions100000
+
+javac testMunchausenNumber.java
+java testMunchausenNumber
+java testMunchausenNumber
+java testMunchausenNumber
+
+javac testPerniciousNumbers100000.java
+java testPerniciousNumbers100000
+java testPerniciousNumbers100000
+java testPerniciousNumbers100000
+
+
+
+end=$(date +%s%N)
+
+echo "Elapsed Time $(($(($end-$start))/1000000)) ms"
+
+python3 log_to_csv.py
+
+rm -f *.class
